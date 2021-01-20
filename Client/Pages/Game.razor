@@ -1,0 +1,28 @@
+@page "/game"
+
+@using Excubo.Blazor.Canvas
+@inject DialogService DialogService
+
+<h1>Gomoku</h1>
+
+<div class="row">
+    <div class="col-xl-6">
+        <RadzenSelectBar Disabled="@disableSelect" @bind-Value=@playerColor TValue="int">
+            <Items>
+                <RadzenSelectBarItem Text="Black" Value="0" />
+                <RadzenSelectBarItem Text="White" Value="1" />
+            </Items>
+        </RadzenSelectBar>
+
+        <RadzenButton Click="@NewGame" Text="New game"></RadzenButton>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6">
+        <Canvas @ref="canvas" @onmouseup="MouseUpCanvas" width="@w" height="@h" />
+    </div>
+</div>
+
+@code {
+    
+}
